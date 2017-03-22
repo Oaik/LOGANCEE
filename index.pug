@@ -1,0 +1,275 @@
+mixin set($img1,$head1,$price1,$img2,$head2,$price2,$img3,$head3,$price3,$img4,$head4,$price4)
+  div.set
+    div
+      div
+        img(src=$img1 alt="image-1")
+      div.text
+        h3= $head1
+        h3= $price1
+        a ADD TO CART
+        i.fa.fa-heart-o
+        i.fa.fa-pie-chart
+    div
+      div
+        img(src=$img2 alt="image-2")
+      div.text
+        h3= $head2
+        h3= $price2
+        a ADD TO CART
+        i.fa.fa-heart-o
+        i.fa.fa-pie-chart
+    div
+      div
+        img(src=$img3 alt="image-3")
+      div.text
+        h3= $head3
+        h3= $price3
+        a ADD TO CART
+        i.fa.fa-heart-o
+        i.fa.fa-pie-chart
+    div
+      div
+        img(src=$img4 alt="image-4")
+      div.text
+        h3= $head4
+        h3= $price4
+        a ADD TO CART
+        i.fa.fa-heart-o
+        i.fa.fa-pie-chart
+
+doctype
+html
+  head
+    title Logancee Home page #1
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet")
+    link(href="stylesheets/font-awesome.min.css", rel="stylesheet")
+    link(href="stylesheets/styles.css", rel="stylesheet")
+  body
+    // Start Header
+    header
+      div.container
+        // First Set
+        div#first          
+          .language
+            // Language and $
+            .default
+              img(src="images/uk.png" width="17px" style="width:17px")
+              span  English
+              i.fa-caret-down.fa
+       
+            span.default-curnt USD
+              i.fa-caret-down.fa
+            .select
+              div
+                img(src="images/uk.png" width="17px" style="width:17px")
+                span  English
+              div
+                img(src="images/ar.png" width="17px" style="width:17px")
+                span  Arabic
+            .curnt
+              span USD
+              span EGY
+
+          div.icons
+            a(href="#"): i.fa-facebook.fa 
+            a(href="#"): i.fa-twitter.fa 
+            a(href="#"): i.fa-pinterest.fa 
+            a(href="#"): i.fa-instagram.fa 
+            a(href="#"): i.fa-dribbble.fa 
+          // Info 
+          div.text
+            span Compare 
+            span Wishlist 
+            span.log Log In
+        div.clearfix
+        
+        // Second Set
+        div#second
+          // Search Box
+          div.search
+            input(type="search",placeholder="Search...")
+            i.fa-search.fa
+          // Shop Info
+          div.shop
+            i.fa-shopping-bag.fa.fa-2x
+            span 0 Items(s) -
+            span $0.00 
+            i.fa-caret-down.fa
+          // Logo
+          div.logo
+            h1  LOGANCEE
+          div.clearfix
+    // End Header
+    div.clearfix
+    .container: hr
+    // Start Nav
+    nav
+      div.container
+        i.fa.fa-align-justify.fa-3x
+        ul
+          li: a(href="#") HOME
+
+          li
+            a(href="#") SHOP
+            i.fa-caret-down.fa
+            div.drop-down
+              a T-Shirts
+              a Jackets
+              a Watches
+          li
+            a(href="#") FEATURES
+            i.fa-caret-down.fa
+            div.drop-down
+              a FEATURES #1
+              a FEATURES #2
+              a FEATURES #3
+
+          li
+            a(href="#") PORTFOLIO
+            i.fa-caret-down.fa
+            div.drop-down
+              a Desgins
+              a Graphic
+
+          li
+            a(href="#") BLOG
+            i.fa-caret-down.fa
+            div.drop-down
+              a Newst Articles
+              a Most Viewed Articles
+              
+
+          li: a(href="#") CONTRACT
+      div.clearfix 
+    // End Nav
+    
+    // Start Main
+    main
+      div.container
+        section.section
+          img(src="images/main1.png")
+          div.clearfix
+        section.section
+          div.img
+            img(src="images/main2.png")
+  
+          div.square
+            h2 Super Sale !
+            p With 100+ new Exulusive Markdowns produces
+            a View Now
+      div.clearfix      
+    // End Nav   
+    .container: hr
+    div.clearfix    
+    // Start Features
+    section#features
+      div.container
+        div#first 
+          h2 AUTUMN COLLECTION
+          div 
+            img(src="images/3.png")
+        div#second
+          div
+            h2 DENIM JEAN - TREND OF JEAN 2017
+            div 
+              img(src="images/4.png")
+          div
+            h2 LOGANCEE'S SHOES VIDEO
+            div 
+              img(src="images/5.png" alt="last")          
+        div.clearfix      
+    // End Features 
+    .container: hr
+    // Start Portfolio     
+    section#portfolio
+      div.container
+        // Cuorseal Optaions
+        div.controllers
+          div.select
+            span.active BEST SELLER
+            span.dots &bull;
+            span NEW ARRIVAL
+            span.dots &bull;
+            span MOST WANTED
+          // Arrows
+          div.arrows
+            i.fa.fa-angle-left.fa-lg
+            span.dots - - - - - -
+            i.fa.fa-angle-right.fa-lg
+        // Images
+
+        div.images
+          .slide
+            +set("https://placehold.it/270x360/239","SAMUAI T-SHIRT","45$","https://placehold.it/270x360/","SAMUAI SHIRT","30$","https://placehold.it/270x360/","SAMUAI Jacket","90$","https://placehold.it/270x360/239","Woo T-SHIRT","55$")
+          .slide
+            +set("https://placehold.it/270x360/","SAMUAI T-SHIRT","45$","https://placehold.it/270x360/239","SAMUAI SHIRT","30$","https://placehold.it/270x360/239","SAMUAI Jacket","90$","https://placehold.it/270x360/","Woo T-SHIRT","55$")
+          .slide
+            +set("https://placehold.it/270x360/","SAMUAI T-SHIRT","45$","https://placehold.it/270x360/239","SAMUAI SHIRT","30$","https://placehold.it/270x360/","SAMUAI Jacket","90$","https://placehold.it/270x360/239","Woo T-SHIRT","55$")
+        div.clearfix       
+    // End Portfolio   
+    .container: hr
+    // Start Blog 
+    section#blog
+      div.container
+        h2 FROM THE BLOG 
+        div.image 
+          img(src="images/7.png")
+        div.image
+          img(src="images/7.png")
+        div.image 
+          img(src="images/7.png")
+      div.clearfix   
+    // End Blog
+    .container: hr
+    // Start Subscribe
+    section#subscribe
+      div.container
+        h2 GET THE LATEST FROM LOGANCEE
+        p Sign Up for our Newsletter!
+        // Input And Subscribe
+        div.form
+          input(type="text" placeholder="Example@domain.com")
+          a.effect SUBSCRIBE
+      div.clearfix   
+    // End Subscribe
+    .container: hr
+    // Start Footer
+    footer
+      div.container
+        div
+          h2 LOGANCEE
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        div
+          h3 INFORMATION
+          ul
+            li: a(href="#careers") Careers
+            li: a(href="#insestor") Insestor Relations
+            li: a(href="#Press") Press Releases
+            li: a(href="#shop") Shop with Points
+        div
+          h3 CUSTOMER CARE
+          ul
+            li: a(href="#Returns") Returns
+            li: a(href="#Shipping") Shipping Info
+            li: a(href="#Gift") Gift Cards
+            li: a(href="#size") Size Guide
+        div
+          h3 GET IN TOUCH
+          ul
+            li: i.fa.fa-home  New Design str. ABC Buliding , Alex , EGYPT
+              
+            li: i.fa.fa-phone  (0044) 8647 1234 568
+            li: i.fa.fa-envelope  Hello@yourdomain.com
+      div.clearfix       
+    .container
+      hr
+      div.copyrights
+        | &copy; 2015 
+        strong LOGANCEE. 
+        | All Reights Reserved
+
+    // End Footer
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+  script(src="script.js")

@@ -1,0 +1,371 @@
+@import "partials/var"
+@import "partials/normalize"
+@import "compass/utilities/general/clearfix"
+@import "partials/base"
+@import "partials/mixins"
+@import "compass/css3"
+
+%flex 
+  +display-flex
+%effect
+  margin: 15px 0
+  padding: 7px 13px
+  border: 1px solid $gray
+  color: $font-color
+  cursor: pointer
+  +single-transition(all,.5s,ease-in-out)
+  &:hover
+    color: #FFF
+    background-color: #000
+
+
+body
+  font-family: 'Roboto', sans-serif
+
+/* header */
+header
+  // First Set of header
+  #first
+    .language
+      +toleft
+      position: relative
+      .default
+        display: inline-block
+        &::after
+          content: "|"
+          padding: 0 15px
+      i 
+        padding-left: 5px
+        cursor: pointer
+      .select,.curnt
+        position: absolute
+        display: none
+      .curnt
+        right: 1em
+        & span
+          display: block
+    .icons
+      +toright 
+      i
+        color: #000 
+        +single-transition(all,.5s,ease-in-out)
+        padding: 0 10px
+        &:hover
+          color: $gray
+          +rotateY(360deg)
+  // Second Set of header
+  #second
+    .search
+      +toleft 
+      min-height: 30px
+      border-bottom: 1px solid $gray
+      &:focus
+        border-bottom: 3px solid $gray
+      input 
+        border: none
+        &:focus
+          border: none
+          outline: none
+      i:hover
+        +single-transition(all,.2s,ease-in-out)
+        color: $font-color
+        +scale(1.1)
+
+    .shop 
+      +toright 
+      min-height: 30px
+      +single-transition(all,0.5s,ease-in-out)
+      &:hover
+        +translateX(7px)
+      i 
+        padding: 0 10px
+
+  #first,#second 
+    margin-top: 15px
+    margin-bottom: 20px
+  #second 
+    margin-top: 30px
+
+  .logo,.text 
+    text-align: center
+
+  .logo h1
+    margin-top: 0
+
+  .text span::after 
+    content: " / "
+  .text span:last-child::after 
+    visibility: hidden
+// Navbar 
+nav 
+  padding: 5px 0
+  margin-top: 7px
+  margin-bottom: 11px
+  i.fa-align-justify
+    display: none
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    text-align: center
+    li 
+      display: inline-block
+      padding: 10px 15px
+      a
+        text-decoration: none
+        color: #000
+      i 
+        padding: 0 10px
+      .drop-down
+        display: none
+        position: absolute
+        background-color: #666666
+        a
+          display: block
+          padding: 7px 13px
+          text-align: left
+          color: #FFF
+          +single-transition(all,.5s,ease-in-out)
+          &:hover 
+            background-color: #333
+            text-indent: -3px
+      &:hover .drop-down
+        display: block
+
+
+
+  /* Main Section */
+main 
+  margin-bottom: 25px
+  section
+    &:first-child
+      +toleft
+      width: 68%
+      margin-right: 2%
+      height: 576px
+      margin: 0 auto
+      img 
+        height: 576px
+
+    &:last-child
+      div:first-child
+        height: 328px
+      +toright
+      width: 30%
+      height: 576px
+      img 
+        height: 328px
+
+    img 
+      max-width: 100%
+      width: 100%
+    .square
+      width: 100%
+      height: 220px
+      background-color: #333333
+      margin-top: 27px
+      position: relative
+      text-align: center
+      color: #FFF
+      @extend %flex
+      +flex-direction(column)
+      justify-content: center
+      align-items: center
+      padding: 10px
+      h2
+        margin: 0
+      a 
+        border: 3px solid $gray
+        padding: 7px 17px
+        font-weight: bold
+        +single-transition(all,.5s,ease-in-out)
+        cursor: pointer
+        &:hover 
+          color: #333
+          background-color: $gray
+
+/* Features */
+
+#features div.container
+  margin-bottom: 25px
+  text-align: center
+  div#first
+    +toleft 
+    width: 40%
+    img 
+      min-height: 672px
+  div#second
+    +toright
+    width: 58%
+    margin-left: 2%
+    img:first-child
+      min-height: 246px
+    img[alt="last"]
+      min-height: 352px
+
+/* Start Portfolio */
+#portfolio
+  margin: 25px 0
+  .controllers
+    text-align: center
+    .select span 
+      padding: 5px
+      cursor: pointer
+      &.active,
+      &:hover
+        font-weight: bold
+  i,
+  a,
+  .effect 
+    @extend %effect
+
+  span.dots
+    padding: 0
+    color: $gray 
+    cursor: default !important
+  .set 
+    @extend %flex
+    +justify-content(space-around)
+    +flex-wrap(wrap)
+    text-align: center
+    i:first-of-type
+      margin: 0 7px
+  .hide 
+    display: none !important
+
+#blog
+  margin: 20px 0
+  text-align: center
+  .image
+    width: 32%
+    margin-right: 2%
+    margin-bottom: 15px
+    float: left
+    &:last-child
+      margin-right: 0
+
+#subscribe
+  margin: 25px 0
+  text-align: center
+  h2
+    margin-bottom: 7px
+  p 
+    margin-top: 0
+    color: $font-color
+
+  .form
+    border: 1px solid gray
+    padding: 0 7px
+    display: inline-block
+    input 
+      border: 0
+      outline: 0
+      width: 15em
+      text-align: center
+      margin-top: 15px
+  .effect
+    @extend %effect
+    color: #eee
+    background-color: #333
+    display: inline-block
+    +single-transition(all,.5s,ease-in-out)
+    &:hover
+      background-color: #000
+      color: #FFF
+
+
+footer
+  margin: 35px 0
+  div > div
+    float: left
+    width: 21.6666%
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li 
+        line-height: 1.7
+        color: $font-color
+        padding-bottom: 5px
+        +single-transition(all,0.5s,ease-in-out)
+        &:last-child
+          padding-bottom: 0
+        &:hover 
+          text-indent: 7px
+        a 
+          color: $font-color
+
+          text-decoration: none
+
+    &:first-child
+      text-align: center
+      margin-right: 5%
+      width: 30%
+      line-height: 1.7
+      p 
+        color: $font-color
+
+        margin-top: 0
+      h2
+        margin-bottom: 0
+    &:last-child
+      margin-right: 0
+.copyrights
+  text-align: center
+  margin-bottom: 11px
+
+@media (max-width: 991px) // mobile phones bootstrap 4 500 px
+  header *
+    margin: 5px auto
+    text-align: center
+    float: none !important
+  header img 
+    margin: 0
+  nav i.fa-align-justify
+    text-align: center
+    width: 100%
+    display: block
+  nav ul
+    display: none
+    li 
+      display: block
+      i.fa-caret-down.fa 
+        display: none
+    &:hover .drop-down
+      display: none !important
+  
+  main section
+    width: 100% !important
+    float: none !important
+    margin: 25px auto
+    +display-flex
+    align-items: center
+    &:last-child 
+      height: auto !important
+      div 
+        float: left
+        width: 48%
+        margin: 0 1%
+  
+  #features #first,
+  #features #second
+    width: 100% !important    
+  #blog .image
+    width: 100%
+
+  footer
+    div > div
+      float: none
+      width: 100% !important
+      text-align: center
+@media (max-width: 720px)
+  main section:last-child 
+    +flex-direction(column)
+    div 
+      float: none
+      margin: 15px 1%
+      &.square
+        width: 100%
+@media (min-width: 992px)
+  nav ul
+    display: block
